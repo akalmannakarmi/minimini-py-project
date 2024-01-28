@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos</title>
+</head>
+<body>
+    <h2>My Todo List</h2>
+    <ul>
+        {% for task in todos %}
+            <li>{{task}} <form action="/p2/remove" method="post"><button name="task" value="{{task}}">Delete</button></form></li>
+        {% endfor %}
+    </ul>
+    <br><br><br>
+    <h3>Add Task</h3>
+    <form action="/p2/add" method="get">
+        <label for="task">Task</label>
+        <input type="text" name="task" id="task">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
